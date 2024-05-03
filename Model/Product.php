@@ -20,7 +20,7 @@ class Product
 
     public function getFullInfo()
     {
-        return "$this->name, $this->brand, $this->price, $this->description" . $this->getFullSpecies();
+        return "$this->name, Marca: $this->brand, Prezzo: €$this->price, Descrizione: $this->description, " . $this->getFullSpecies();
     }
 
     public function getFullSpecies()
