@@ -4,13 +4,15 @@ class Product
 {
 
     public $name;
+    public $brand;
     public $price;
     public $species;
     public $description;
 
-    public function __construct(string $_name, float $_price, array $_species, string $_description)
+    public function __construct(string $_name, string $_brand, float $_price, array $_species, string $_description)
     {
         $this->name = $_name;
+        $this->brand = $_brand;
         $this->price = $_price;
         $this->species = $_species;
         $this->description = $_description;
@@ -18,7 +20,7 @@ class Product
 
     public function getFullInfo()
     {
-        return "$this->name, $this->price, " . $this->getFullSpecies();
+        return "$this->name, $this->brand, $this->price, $this->description" . $this->getFullSpecies();
     }
 
     public function getFullSpecies()
