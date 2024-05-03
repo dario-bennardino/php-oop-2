@@ -1,3 +1,7 @@
+<?php
+require_once __DIR__ . '/Model/Product.php';
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -12,7 +16,9 @@
 </head>
 
 <body>
-
+    <div class="container">
+        <h1 class="text-center my-4">Shop Online</h1>
+    </div>
 </body>
 
 </html>
