@@ -8,7 +8,7 @@ class BedProduct extends Product
     function __construct(string $_name, string $_brand, float $_price, array $_species, string $_description, string $_size)
 
     {
-        parent::__construct($_name, $_brand, $_price, $_species, $_description,);
+        parent::__construct($_name, $_brand, $_price, $_species, $_description);
 
         $this->size = $_size;
     }
