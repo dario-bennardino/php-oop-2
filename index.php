@@ -78,13 +78,20 @@ require_once __DIR__ . '/data/db.php';
                             <li class="list-group-item"> <?php echo $product->brand; ?> </li>
                             <li class="list-group-item">€ <?php echo $product->price; ?></li>
                             <li class="list-group-item">Adatto per: <?php echo $product->getFullSpecies(); ?></li>
-
-
                             <li class="list-group-item">Ingredienti: </li>
-
-
                             <li class="list-group-item">Dimensione: <?php echo $product->size ?? '-'; ?></li>
                             <li class="list-group-item">Materiale: <?php echo $product->materials ?? '-'; ?></li>
+                            <li class="list-group-item"><?php $species = $product->getFullSpecies();
+                                                        if ($species === 'gatti') {
+                                                            echo '<i class="fas fa-cat"></i>';
+                                                        } elseif ($species === 'cani') {
+                                                            echo '<i class="fas fa-dog"></i>';
+                                                        } elseif ($species === 'cani, gatti') {
+                                                            echo '<i class="fas fa-cat"></i> <i class="fas fa-dog"></i>';
+                                                        }
+                                                        ?>
+                            </li>
+
                         </ul>
                     </div>
                 <?php endforeach; ?>
