@@ -6,6 +6,32 @@ body {
     box-sizing: border-box;
 }
 
+/* HEADER */
+header {
+    margin-bottom: 25px;
+}
+
+.navbar {
+    background-color: #131921 !important;
+}
+
+.nav-link {
+    color: white !important;
+
+}
+
+.navbar-brand {
+    color: white;
+    font-size: 2.5rem;
+    font-weight: bold;
+    margin-left: 20px;
+}
+
+.navbar-brand:hover {
+    color: white !important;
+}
+
+/* MAIN */
 .card-img-top {
     width: 200px;
     height: 300px;
@@ -17,26 +43,8 @@ body {
     margin: 5px;
 }
 
-.navbar-brand {
-    color: white;
-    font-size: 2.5rem;
-    font-weight: bold;
-    margin-left: 20px;
-}
 
-.nav-link {
-    color: white !important;
-
-}
-
-header {
-    margin-bottom: 25px;
-}
-
-.navbar {
-    background-color: #131921 !important;
-}
-
+/* FOOTER */
 footer {
     height: 300px;
     background-color: #242F3E;
