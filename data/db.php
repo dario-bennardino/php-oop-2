@@ -11,7 +11,7 @@ require_once __DIR__ . '/../Model/Category.php';
 
 $db = [
     new FoodProduct('Crocchette per cani', 'https://m.media-amazon.com/images/I/61QIFZXfyIL._AC_SL1500_.jpg', 'Amazon', 31.00, ['cani'], 'Cibo per cani adulti', new Category('Cani', '<i class="fa-solid fa-dog"></i>'), ['carne di manzo', 'sale', 'olio', 'aromi vegetali']),
-    new FoodProduct('', 'https://m.media-amazon.com/images/I/61QIFZXfyIL._AC_SL1500_.jpg', 'Amazon', 31.00, ['cani'], 'Cibo per cani adulti', new Category('Cani', '<i class="fa-solid fa-dog"></i>'), ['carne di manzo', 'sale', 'olio', 'aromi vegetali']),
+    // new FoodProduct('', 'https://m.media-amazon.com/images/I/61QIFZXfyIL._AC_SL1500_.jpg', 'Amazon', 31.00, ['cani'], 'Cibo per cani adulti', new Category('Cani', '<i class="fa-solid fa-dog"></i>'), ['carne di manzo', 'sale', 'olio', 'aromi vegetali']),
 
     new FoodProduct('Crocchette per gatti', 'https://m.media-amazon.com/images/I/71uRyeNLHmL._AC_SL1500_.jpg', 'Purina One', 38.00, ['gatti'], 'Crocchette per gatti indoor', new Category('Gatti', '<i class="fa-solid fa-cat"></i>'), ['carne di pollo', 'sali minerali', 'aromi vegetali']),
     new FoodProduct('Scatolette per gatti', 'https://m.media-amazon.com/images/I/81iUD1TndFL._AC_SL1500_.jpg', 'Purina Gold', 24.00, ['gatti'], 'Cibo per gatti adulti Purina Gourmet Gold Mousse con pesce dell’oceano',  new Category('Gatti', '<i class="fa-solid fa-cat"></i>'), ['pesce', 'proteine vegetali', 'sostanze minerali']),
