@@ -13,6 +13,8 @@ $ToyProduct = array_filter($db, fn ($product) => get_class($product) === 'ToyPro
 
 $BedProduct = array_filter($db, fn ($product) => get_class($product) === 'BedProduct');
 
+// ESEMPIO DI EXCEPTIONS
+// throw new Exception('Questo è un nuovo errore PHP');
 
 ?>
 
