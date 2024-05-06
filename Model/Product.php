@@ -1,5 +1,7 @@
 <?php
 
+require_once __DIR__ . '/Category.php';
+
 class Product
 {
 
@@ -9,8 +11,9 @@ class Product
     public $price;
     public $species;
     public $description;
+    public $category;
 
-    public function __construct(string $_name, string $_image, string $_brand, float $_price, array $_species, string $_description)
+    public function __construct(string $_name, string $_image, string $_brand, float $_price, array $_species, string $_description, Category $_category)
     {
         $this->name = $_name;
         $this->image = $_image;
@@ -18,6 +21,7 @@ class Product
         $this->price = $_price;
         $this->species = $_species;
         $this->description = $_description;
+        $this->category = $_category;
     }
 
     public function getFullInfo()

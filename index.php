@@ -1,6 +1,17 @@
 <?php
 require_once __DIR__ . '/Model/Product.php';
 require_once __DIR__ . '/data/db.php';
+require_once __DIR__ . '/BedProduct.php';
+require_once __DIR__ . '/FoodProduct.php';
+require_once __DIR__ . '/ToyProduct.php';
+require_once __DIR__ . '/Model/Category.php';
+
+// filtro l'array generale dei prodotti in base alla classe separando quindi cibo, giochi, accessori e che siano disponibili
+$FoodProduct = array_filter($db, fn ($product) => get_class($product) === 'FoodProduct');
+
+$ToyProduct = array_filter($db, fn ($product) => get_class($product) === 'ToyProduct');
+
+$BedProduct = array_filter($db, fn ($product) => get_class($product) === 'BedProduct');
 
 
 ?>
@@ -67,7 +78,9 @@ require_once __DIR__ . '/data/db.php';
         <div class="container">
             <!-- <h1 class="text-center my-4">Shop Online</h1> -->
             <div class="row row-cols-4 ">
-                <?php foreach ($db as $product) : ?>
+
+
+                <!-- <?php foreach ($db as $product) : ?>
                     <div class="card" style="width: 18rem;">
                         <img src="<?php echo $product->image ?>" class="card-img-top" alt="<?php echo $product->name; ?>">
                         <div class="card-body">
@@ -95,6 +108,63 @@ require_once __DIR__ . '/data/db.php';
                         </ul>
                     </div>
                 <?php endforeach; ?>
+              -->
+
+                <?php foreach ($FoodProduct as $item) : ?>
+                    <div class="card" style="width: 18rem;">
+                        <img src="<?php echo $item->image ?>" class="card-img-top" alt="<?php echo $item->name; ?>">
+                        <div class="card-body">
+                            <h5 class="card-title"> <?php echo $item->name; ?></h5>
+                            <p class="card-text"> <?php echo $item->description; ?></p>
+                        </div>
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item"> <?php echo $item->brand; ?> </li>
+                            <li class="list-group-item">€ <?php echo $item->price; ?></li>
+                            <li class="list-group-item"> <?php echo $item->category->icon; ?></li>
+                            <li class="list-group-item">Ingredienti: </li>
+                            <li class="list-group-item">Dimensione: <?php echo $item->size ?? '-'; ?></li>
+                            <li class="list-group-item">Materiale: <?php echo $item->materials ?? '-'; ?></li>
+                        </ul>
+                    </div>
+                <?php endforeach; ?>
+
+
+                <?php foreach ($ToyProduct as $item) : ?>
+                    <div class="card" style="width: 18rem;">
+                        <img src="<?php echo $item->image ?>" class="card-img-top" alt="<?php echo $item->name; ?>">
+                        <div class="card-body">
+                            <h5 class="card-title"> <?php echo $item->name; ?></h5>
+                            <p class="card-text"> <?php echo $item->description; ?></p>
+                        </div>
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item"> <?php echo $item->brand; ?> </li>
+                            <li class="list-group-item">€ <?php echo $item->price; ?></li>
+                            <li class="list-group-item"> <?php echo $item->category->icon; ?></li>
+                            <li class="list-group-item">Ingredienti: </li>
+                            <li class="list-group-item">Dimensione: <?php echo $item->size ?? '-'; ?></li>
+                            <li class="list-group-item">Materiale: <?php echo $item->materials ?? '-'; ?></li>
+                        </ul>
+                    </div>
+                <?php endforeach; ?>
+
+                <?php foreach ($BedProduct as $item) : ?>
+                    <div class="card" style="width: 18rem;">
+                        <img src="<?php echo $item->image ?>" class="card-img-top" alt="<?php echo $item->name; ?>">
+                        <div class="card-body">
+                            <h5 class="card-title"> <?php echo $item->name; ?></h5>
+                            <p class="card-text"> <?php echo $item->description; ?></p>
+                        </div>
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item"> <?php echo $item->brand; ?> </li>
+                            <li class="list-group-item">€ <?php echo $item->price; ?></li>
+                            <li class="list-group-item"> <?php echo $item->category->icon; ?></li>
+                            <li class="list-group-item">Ingredienti: </li>
+                            <li class="list-group-item">Dimensione: <?php echo $item->size ?? '-'; ?></li>
+                            <li class="list-group-item">Materiale: <?php echo $item->materials ?? '-'; ?></li>
+                        </ul>
+                    </div>
+                <?php endforeach; ?>
+
             </div>
         </div>
     </main>
@@ -115,6 +185,8 @@ require_once __DIR__ . '/data/db.php';
                 <div class="col text-white">
                     Condizioni generali vendita
                 </div>
+
+
 
 
             </div>
